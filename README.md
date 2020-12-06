@@ -21,6 +21,10 @@ To install the app, one can clone the repository mentioned later in this readme.
 ## Usage Information
 the command npm start opens the local session locally. Casual users of the app can head over to https://enigmatic-earth-32040.herokuapp.com/ and use it fully functionally without installing. 
 
+The MongoDB, (visualized here in Robo3T) stores information whether on or offline, so no data is lost. 
+
+![project image](./imgs/offlinetest.png)
+
 ## License
 MIT
 
