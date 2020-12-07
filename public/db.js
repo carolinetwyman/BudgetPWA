@@ -7,7 +7,7 @@ window.shimIndexedDB;
 
 let db;
 const request = indexedDB.open("budgettracker", 1);
-
+//when information changes, autoincrement
 request.onupgradeneeded = function(event) {
   const db = event.target.result;
   db.createObjectStore("pending", { autoIncrement: true });
@@ -21,7 +21,7 @@ request.onsuccess = function(event) {
     checkDatabase();
   }
 };
-
+//output an error on an error
 request.onerror = function(event) {
   console.log("Whoops! " + event.target.errorCode);
 };
@@ -33,12 +33,12 @@ function saveRecord(record) {
 
   store.add(record);
 }
-
+//check the stored database
 function checkDatabase() {
   const transaction = db.transaction(["pending"], "readwrite");
   const store = transaction.objectStore("pending");
   const getAll = store.getAll();
-
+//get the info in the stored db
   getAll.onsuccess = function() {
     if (getAll.result.length > 0) {
       fetch("/api/transaction/bulk", {

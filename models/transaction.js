@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-
+//creates a model of the transaction for the db
 const transactionSchema = new Schema(
   {
     name: {
